@@ -19,7 +19,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(0, 0, 0, 0.6); /* semi-transparent bar */
+    background: #000000;
     padding: 10px 20px;
     position: fixed;
     width: 100%;

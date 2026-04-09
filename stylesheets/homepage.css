@@ -6,7 +6,12 @@
     font-style: normal;
 }
 
-
+@font-face {
+    font-family: "Louis George Cafe";
+    src: url("../assets/fonts/Louis George Cafe.ttf") format("truetype");   
+    font-weight: normal;
+    font-style: normal;
+}
 
 
 /* Reset some default styles */
@@ -73,15 +78,36 @@ nav ul li a.active {
 /* Hero section */
 .hero {
     display: flex;
+    flex-direction: column;
     justify-content: right;
     align-items: center;
-    height: 100vh;
-    text-align: center;
-    margin-right: 20px;
+    text-align: left;
+    font-family: "Louis George Cafe", serif;
+    background: rgba(255, 255, 255, 0.521);
+    position: absolute;
+    top: 50%;
+    right: 100px;
+    border-radius: 10px;
+    animation-name: myAnimation;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+
+
+@keyframes myAnimation {
+    0% { transform: translateY(calc(-50% + 200px)); }
+    100% { transform: translateY(-50%); }
 }
 
 .hero h1 {
-    font-size: 3em;
-    background: rgba(255, 255, 255, 0.521);
+    color: black;
+    font-size: 50px;
+    padding: 20px;
+}
+
+.hero ul {
+      color: black;
+    font-size: 30px;
     padding: 20px;
 }

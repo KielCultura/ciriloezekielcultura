@@ -1,3 +1,14 @@
+/* importing font*/
+@font-face {
+    font-family: "ThisAppeal";
+    src: url(assets/fonts/ThisAppeal-FreeDemo.ttf) format("truetype");   
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+
 /* Reset some default styles */
 * {
     margin: 0;
@@ -7,8 +18,8 @@
 
 /* Body with background image */
 body {
-    font-family: Arial, sans-serif;
-    background: url("/images/mainbg.png") no-repeat center center fixed;
+    font-family: "ThisAppeal", sans-serif;
+    background: url("assets/images/mainbg.png") no-repeat center center fixed;
     background-size: cover;
     color: white;
     height: 100vh;
@@ -41,12 +52,12 @@ nav ul {
 nav ul li a {
     text-decoration: none;
     color: white;
-    font-weight: bold;
     transition: color 0.3s;
+    font-size: 40px;
 }
 
 nav ul li a:hover {
-    color: #ffffff; /* highlight color */
+    color: #4e4e4e; /* highlight color */
 }
 
 nav ul li a.active {

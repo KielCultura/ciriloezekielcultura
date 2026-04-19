@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Ezekiel</title>
+    <link rel="stylesheet" href="stylesheets/homepage.css">
+    <link rel="stylesheet" href="stylesheets/projects.css">
+</head>
+<body class="projects-body">
+    <!-- Top Navigation Bar -->
+    <header class="topbar projects-topbar">
+        <div class="logo">
+            <img src="assets/images/logo.png" alt="Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="projects.html" class="active">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Projects Section -->
+    <section class="projects-section">
+        <h1 class="projects-title">My Projects</h1>
+        
+        <div class="projects-grid">
+            <!-- Project Card 1 -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="assets/images/project1-placeholder.png" alt="Project 1">
+                </div>
+                <div class="project-info">
+                    <h3 class="project-name">Project Title 1</h3>
+                    <p class="project-description">Brief description of your project goes here. What was your role and what technologies did you use?</p>
+                    <button class="details-btn" onclick="openModal(1)">View Details</button>
+                </div>
+            </div>
+
+            <!-- Project Card 2 -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="assets/images/project2-placeholder.png" alt="Project 2">
+                </div>
+                <div class="project-info">
+                    <h3 class="project-name">Project Title 2</h3>
+                    <p class="project-description">Brief description of your project goes here. What was your role and what technologies did you use?</p>
+                    <button class="details-btn" onclick="openModal(2)">View Details</button>
+                </div>
+            </div>
+
+            <!-- Project Card 3 -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="assets/images/project3-placeholder.png" alt="Project 3">
+                </div>
+                <div class="project-info">
+                    <h3 class="project-name">Project Title 3</h3>
+                    <p class="project-description">Brief description of your project goes here. What was your role and what technologies did you use?</p>
+                    <button class="details-btn" onclick="openModal(3)">View Details</button>
+                </div>
+            </div>
+
+            <!-- Project Card 4 -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="assets/images/project4-placeholder.png" alt="Project 4">
+                </div>
+                <div class="project-info">
+                    <h3 class="project-name">Project Title 4</h3>
+                    <p class="project-description">Brief description of your project goes here. What was your role and what technologies did you use?</p>
+                    <button class="details-btn" onclick="openModal(4)">View Details</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal for Project Details -->
+    <div id="projectModal" class="modal">
+        <div class="modal-overlay" onclick="closeModal()"></div>
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal()">&times;</button>
+            
+            <div class="modal-header">
+                <h2 id="modalTitle">Project Title</h2>
+            </div>
+
+            <div class="modal-body">
+                <div class="modal-gallery">
+                    <img id="modalImage1" src="assets/images/project-detail-placeholder.png" alt="Project Detail">
+                    <img id="modalImage2" src="assets/images/project-detail-placeholder.png" alt="Project Detail 2" style="display:none;">
+                </div>
+
+                <div class="modal-info">
+                    <h3>Project Details</h3>
+                    <p id="modalDescription">
+                        This is where you add detailed information about your project. Include:
+                    </p>
+                    <ul>
+                        <li>Project overview and goals</li>
+                        <li>Technologies and tools used</li>
+                        <li>Your role and contributions</li>
+                        <li>Results and impact</li>
+                        <li>Key features and achievements</li>
+                    </ul>
+
+                    <h4>Technologies Used</h4>
+                    <div class="tech-tags">
+                        <span class="tech-tag">HTML</span>
+                        <span class="tech-tag">CSS</span>
+                        <span class="tech-tag">JavaScript</span>
+                    </div>
+
+                    <div class="modal-links">
+                        <a href="#" class="modal-link">Live Demo</a>
+                        <a href="#" class="modal-link">GitHub Repo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/projects.js"></script>
+</body>
+</html>

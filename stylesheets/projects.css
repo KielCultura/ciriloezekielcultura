@@ -1,0 +1,482 @@
+/* Projects page specific body styling */
+.projects-body {
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+    color: white;
+    min-height: 100vh;
+    animation: pageLoad 0.6s ease-out;
+}
+
+/* Topbar styling for projects page */
+.projects-topbar {
+    background: #1a1a1a;
+    border-bottom: 2px solid #333333;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.projects-topbar nav ul li a {
+    color: white;
+    font-size: 32px;
+}
+
+.projects-topbar nav ul li a:hover {
+    color: #bbbbbb;
+}
+
+/* Projects Section */
+.projects-section {
+    min-height: 100vh;
+    padding: 120px 40px 60px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.projects-title {
+    font-family: "Louis George Cafe", serif;
+    font-size: 56px;
+    text-align: center;
+    margin-bottom: 60px;
+    animation: titleSlideIn 0.8s ease-out;
+    position: relative;
+}
+
+.projects-title::after {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, #ffffff 0%, transparent 100%);
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: expandWidth 0.8s ease-out 0.3s forwards;
+    transform-origin: center;
+    transform: scaleX(0) translateX(-50%);
+}
+
+/* Projects Grid */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+/* Project Card */
+.project-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    animation: cardFadeIn 0.8s ease-out backwards;
+    transition: all 0.3s ease;
+}
+
+.project-card:nth-child(1) { animation-delay: 0.1s; }
+.project-card:nth-child(2) { animation-delay: 0.2s; }
+.project-card:nth-child(3) { animation-delay: 0.3s; }
+.project-card:nth-child(4) { animation-delay: 0.4s; }
+
+.project-card:hover {
+    transform: translateY(-15px);
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 20px 40px rgba(255, 255, 255, 0.1);
+}
+
+/* Project Image */
+.project-image {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #1e1e1e 0%, #333333 100%);
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.project-card:hover .project-image img {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+}
+
+/* Project Info */
+.project-info {
+    padding: 25px;
+}
+
+.project-name {
+    font-family: "ThisAppeal", sans-serif;
+    font-size: 24px;
+    margin-bottom: 12px;
+    color: white;
+}
+
+.project-description {
+    font-family: "Louis George Cafe", serif;
+    font-size: 14px;
+    color: #d0d0d0;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+/* Details Button */
+.details-btn {
+    width: 100%;
+    padding: 12px 20px;
+    background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
+    color: #000000;
+    border: none;
+    border-radius: 8px;
+    font-family: "ThisAppeal", sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    position: relative;
+    overflow: hidden;
+}
+
+.details-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: left 0.3s ease;
+}
+
+.details-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
+}
+
+.details-btn:hover::before {
+    left: 100%;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.modal.show {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: modalFadeIn 0.3s ease-out;
+}
+
+.modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(5px);
+    cursor: pointer;
+    animation: backdropFadeIn 0.3s ease-out;
+}
+
+.modal-content {
+    background: #1a1a1a;
+    border-radius: 20px;
+    max-width: 900px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    z-index: 1001;
+    animation: modalSlideIn 0.4s ease-out;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+}
+
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 36px;
+    font-weight: bold;
+    color: white;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 1002;
+}
+
+.close-modal:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: rotate(90deg);
+}
+
+/* Modal Header */
+.modal-header {
+    padding: 40px 40px 20px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.modal-header h2 {
+    font-family: "Louis George Cafe", serif;
+    font-size: 40px;
+    margin: 0;
+}
+
+/* Modal Body */
+.modal-body {
+    padding: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.modal-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.modal-gallery img {
+    width: 100%;
+    border-radius: 12px;
+    animation: imageSlideIn 0.5s ease-out;
+}
+
+.modal-info h3 {
+    font-family: "ThisAppeal", sans-serif;
+    font-size: 24px;
+    margin-bottom: 15px;
+    margin-top: 0;
+}
+
+.modal-info h4 {
+    font-family: "ThisAppeal", sans-serif;
+    font-size: 18px;
+    margin: 25px 0 15px;
+    color: #e0e0e0;
+}
+
+.modal-info p,
+.modal-info li {
+    font-family: "Louis George Cafe", serif;
+    font-size: 14px;
+    color: #d0d0d0;
+    line-height: 1.8;
+}
+
+.modal-info ul {
+    margin: 15px 0;
+    padding-left: 20px;
+}
+
+.modal-info li {
+    margin-bottom: 8px;
+}
+
+/* Tech Tags */
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.tech-tag {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-family: "ThisAppeal", sans-serif;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    animation: tagPop 0.5s ease-out backwards;
+}
+
+.tech-tag:nth-child(1) { animation-delay: 0s; }
+.tech-tag:nth-child(2) { animation-delay: 0.1s; }
+.tech-tag:nth-child(3) { animation-delay: 0.2s; }
+
+.tech-tag:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-3px);
+}
+
+/* Modal Links */
+.modal-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.modal-link {
+    flex: 1;
+    padding: 12px 20px;
+    background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
+    color: #000000;
+    text-decoration: none;
+    border-radius: 8px;
+    text-align: center;
+    font-family: "ThisAppeal", sans-serif;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.modal-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
+}
+
+/* Animations */
+@keyframes titleSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes expandWidth {
+    from {
+        width: 0;
+        transform: scaleX(0);
+    }
+    to {
+        width: 100px;
+        transform: scaleX(1);
+    }
+}
+
+@keyframes cardFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes backdropFadeIn {
+    from {
+        background: rgba(0, 0, 0, 0);
+    }
+    to {
+        background: rgba(0, 0, 0, 0.85);
+    }
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes imageSlideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes tagPop {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes pageLoad {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .projects-section {
+        padding: 100px 20px 40px;
+    }
+
+    .projects-title {
+        font-size: 36px;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .modal-content {
+        width: 95%;
+        max-height: 95vh;
+    }
+
+    .modal-body {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 30px;
+    }
+
+    .project-image {
+        height: 200px;
+    }
+
+    .modal-header {
+        padding: 30px 30px 15px;
+    }
+
+    .modal-header h2 {
+        font-size: 28px;
+    }
+}

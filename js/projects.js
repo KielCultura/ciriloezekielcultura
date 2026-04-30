@@ -37,8 +37,8 @@ const projectData = {
     },
 
      5: {
-        title: 'Tsuneo',
-        description: 'An UTAU voicebank that I created using my own voice. It features deep baritone sound, currently available in Japanese. You can listen to a demo here: <a href="https://www.youtube.com/watch?v=9OarZyaEIjY" target="_blank" style="color: #0066cc; text-decoration: underline;">https://www.youtube.com/watch?v=9OarZyaEIjY</a>',
+        title: 'Tsuneo (BETA)',
+        description: 'An UTAU voicebank that I created using my own voice. It features a deep baritone sound, currently available in Japanese. You can listen to a demo here: <a href="https://www.youtube.com/watch?v=9OarZyaEIjY" target="_blank" style="color: #0066cc; text-decoration: underline;">https://www.youtube.com/watch?v=9OarZyaEIjY</a>',
         image1: 'assets/images/Tsuneo.png',
         image2: 'assets/images/Tsuneo-detail.png',
         tech: ['UTAU', 'Music', 'Voice Synthesis', 'Concatenation'],
